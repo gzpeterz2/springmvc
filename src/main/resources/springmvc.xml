@@ -14,6 +14,7 @@
      http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
      http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache-4.0.xsd">
      
+    <!-- <context:component-scan base-package=""></context:component-scan> -->
     <!--  Handler -->
     <bean name="/itemList.action"  class="com.hc.springmvc.controller.ItemController1" />
      
@@ -25,5 +26,11 @@
   
 	<!--   视图解析器 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" />
+	
+
+	<!-- 注解适配器 -->
+	<bean
+		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter" />
+	
      
 </beans>
