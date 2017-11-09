@@ -4,23 +4,22 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.Controller;
 
 import com.hc.springmvc.po.Items;
 
-
-public class ItemController1 implements Controller {
-
-	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		
+@Controller
+@RequestMapping("/item")
+public class ItemController3 {
+	
+	@RequestMapping("/list.action")
+	public ModelAndView list() {
 		List<Items> itemsList = new ArrayList<Items>();
 
 		Items items_1 = new Items();
-		items_1.setName("联想笔记本");
+		items_1.setName("联想笔记本 in controler 3");
 		items_1.setPrice(6000f);
 		items_1.setCreatetime(new Date());
 		items_1.setDetail("ThinkPad T430 联想笔记本电脑！");
@@ -35,8 +34,8 @@ public class ItemController1 implements Controller {
 		
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("itemsList", itemsList);
-		modelAndView.addObject("aaaa", "this is from controler");
 		modelAndView.setViewName("itemsList");
+
 		return modelAndView;
 	}
 
