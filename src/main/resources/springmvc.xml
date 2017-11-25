@@ -30,10 +30,13 @@
 
    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping" >
    		<property name="mappings">
-   			<props>
-   				<prop key="/list1.action">itemController1</prop>
-   				<prop key="/list2.action">itemController2</prop>
-   			</props>
+   			<value>
+   				/list1.action=itemController1
+   				/list2.action=itemController2
+   			</value>
+   			
+   				<!-- <prop key="/list1.action">itemController1</prop>
+   				<prop key="/list2.action">itemController2</prop> -->
    		</property>
    </bean>
      
